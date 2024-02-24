@@ -12,6 +12,12 @@ resource "aws_route_table" "rtb" {
   }
 }
 
+# ? is a ternary operator (elvis operator)
+# expression ? if_true : if_false
+# 100 > 99 ? apple : banana
+# variable Name == Steve
+# name != David ? 100 : 200
+
 resource "aws_route_table_association" "assoc" {
   count          = length(var.subnets)
   subnet_id      = var.subnets[count.index]
